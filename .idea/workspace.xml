@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c9be832e-3fc8-4ea0-b979-187be296c013" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1jlc0FRVJ8FzstSJDHmr7EFImMd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Views/dashboard" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views\payment" />
+      <recent name="E:\Xampp\htdocs\Pharmacy" />
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views\layout" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views\dashboard" />
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views\account" />
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views\payment" />
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views\layout" />
+      <recent name="E:\Xampp\htdocs\Pharmacy\Views" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9be832e-3fc8-4ea0-b979-187be296c013" name="Default Changelist" comment="" />
+      <created>1604381902000</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604381902000</updated>
+      <workItem from="1604381905834" duration="14413000" />
+      <workItem from="1605711532779" duration="2106000" />
+      <workItem from="1605716607239" duration="3661000" />
+      <workItem from="1605862750229" duration="31993000" />
+      <workItem from="1605942337492" duration="4866000" />
+      <workItem from="1606114355150" duration="17098000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1606125630337">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606125630337" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1606120358872">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1606120358872" />
+  </component>
+</project>
