@@ -19,28 +19,34 @@
         <div class="row">
             <div class="col-12">
                 <div class="card-group card-counter">
-                    <div class="card col-3" style="margin-right: 20px; background: rgba(42, 145, 235, 0.6); border-radius: 5px">
+                    <div class="card col-3" style="margin-right: 20px; background: #F2C047; border-radius: 5px">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 30px; color: #fff">Users</h5>
                             <p class="card-text" style="font-size: 20px; color: #fff""><?= $cUser ?>.</p>
                         </div>
                     </div>
-                    <div class="card col-3" style="margin-right: 20px; background: rgba(16, 245, 70, 0.6); border-radius: 5px">
+                    <div class="card col-3" style="margin-right: 20px; background: #C7D35E; border-radius: 5px">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 30px; color: #fff">Medicines</h5>
                             <p class="card-text" style="font-size: 20px; color: #fff""><?= $cMedicine ?>.</p>
                         </div>
                     </div>
-                    <div class="card col-3" style="margin-right: 20px; background: rgba(246, 102, 29, 0.6); border-radius: 5px">
+                    <div class="card col-3" style="margin-right: 20px; background: #DF7D81; border-radius: 5px">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 30px; color: #fff">Invoices</h5>
                             <p class="card-text" style="font-size: 20px; color: #fff""><?= $cInvoice ?>.</p>
                         </div>
                     </div>
-                    <div class="card col-3" style="background: rgba(18, 246, 185, 0.6); border-radius: 5px">
+                    <div class="card col-3" style="margin-right: 20px; background: #8FCDDA; border-radius: 5px">
                         <div class="card-body">
                             <h5 class="card-title" style="font-size: 30px; color: #fff">Customers</h5>
                             <p class="card-text" style="font-size: 20px; color: #fff""><?= $cCustomer ?>.</p>
+                        </div>
+                    </div>
+                    <div class="card col-3" style="background: #B980AE; border-radius: 5px">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size: 30px; color: #fff">Suppliers</h5>
+                            <p class="card-text" style="font-size: 20px; color: #fff""><?= $cSupplier ?>.</p>
                         </div>
                     </div>
                 </div>

@@ -45,7 +45,7 @@
         }
 
         function addInvoice() {
-            if (isLogin() && getRole() == 1) {
+            if (isLogin() && getRole() == 2) {
                 if (isset($_POST['btn_save'])) {
                     $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
                     $customer_id = filter_input(INPUT_POST, 'customer_id', FILTER_SANITIZE_NUMBER_INT);

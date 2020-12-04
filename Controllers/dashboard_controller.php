@@ -12,7 +12,8 @@
                 $cMedicine = Medicine::count();
                 $cInvoice = Invoice::count();
                 $cCustomer = Customer::count();
-                $this->render('index', array('medicine' => $out, 'cUser' => $countUser, 'cMedicine' => $cMedicine, 'cInvoice' => $cInvoice, 'cCustomer' => $cCustomer), 'main_template');
+                $cSupplier = Supplier::count();
+                $this->render('index', array('medicine' => $out, 'cUser' => $countUser, 'cMedicine' => $cMedicine, 'cInvoice' => $cInvoice, 'cCustomer' => $cCustomer,  'cSupplier' => $cSupplier), 'main_template');
             } else {
                 redirect("?controller=home&action=error");
             }
