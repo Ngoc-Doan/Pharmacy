@@ -102,6 +102,8 @@
                 </li>
                 <li class="nav-item"><a class="dropdown-toggle nav-link" href="?controller=payment&action=salary"><i class="la la-money"></i><span>Salary</span></a>
                 </li>
+                <li class="nav-item"><a class="dropdown-toggle nav-link" href="?controller=supplier&action=managerSupplier"><i class="la la-archive"></i><span>Suplliers</span></a>
+                </li>
                 <li class="nav-item"><a class="dropdown-toggle nav-link" href="?controller=payment&action=saleStatistic"><i class="la la-medkit"></i><span>Statistics</span></a>
                 </li>
             </ul>

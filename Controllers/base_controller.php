@@ -7,6 +7,7 @@
     require_once('Models/InvoiceDetail.php');
     require_once('Models/Salary.php');
     require_once('Models/SaleStatistic.php');
+    require_once('Models/Supplier.php');
     class BaseController {
         protected $name;
 

@@ -154,8 +154,7 @@ CREATE TABLE `salary` (
 --
 
 INSERT INTO `salary` (`id`, `emp_id`, `begin`, `end`, `amount`) VALUES
-(1, 1, '2020-09-01', '2020-09-01', 2000000),
-(2, 2, '2020-09-01', '2020-09-01', 1700000);
+(1, 1, '2020-09-01', '2020-09-01', 2000000);
 
 -- --------------------------------------------------------
 
@@ -311,8 +310,27 @@ ALTER TABLE `sale_statistics`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+CREATE TABLE `supplier` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `supplier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+INSERT INTO `supplier` (`name`, `address`, `email`, `phone`) VALUES
+('Pharmacity', '27 Tran Hung Dao', 'pn@gmail.com', '06803231234');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

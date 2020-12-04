@@ -3,13 +3,13 @@
     <div class="content-wrapper">
         <div class="content-header row mb-1">
             <div class="content-header-left col-md-6 col-12 mb-2">
-                <h3 class="content-header-title">Add User</h3>
+                <h3 class="content-header-title">Edit Supplier</h3>
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Add User
+                            <li class="breadcrumb-item active">Edit Supplier
                             </li>
                         </ol>
                     </div>
@@ -32,13 +32,13 @@
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form-horizontal" action="?controller=account&action=editUser" method="post" enctype="multipart/form-data" novalidate>
+                                    <form class="form-horizontal" action="?controller=supplier&action=editSupplier" method="post" enctype="multipart/form-data" novalidate>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-12">
                                                 <div class="form-group">
                                                     <h5>ID <span class="required">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="id" value="<?=$user->id?>" class="form-control mb-1" readonly>
+                                                        <input type="text" name="id" value="<?=$supplier->id?>" class="form-control mb-1" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -46,7 +46,15 @@
                                                 <div class="form-group">
                                                     <h5>Name <span class="required">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="name" value="<?=$user->name?>" class="form-control mb-1" minlength="3" maxlength="20" required data-validation-required-message="Email is required">
+                                                        <input type="text" name="name" value="<?=$supplier->name?>" class="form-control mb-1" minlength="3" maxlength="100">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="form-group">
+                                                    <h5>Address <span class="required">*</span></h5>
+                                                    <div class="controls">
+                                                        <input type="text" name="address" value="<?=$supplier->address?>" class="form-control mb-1" minlength="3" maxlength="200">
                                                     </div>
                                                 </div>
                                             </div>
@@ -54,34 +62,25 @@
                                                 <div class="form-group">
                                                     <h5>Email <span class="required">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="email" name="email" value="<?=$user->email?>" class="form-control mb-1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required data-validation-required-message="Email is required">
+                                                        <input type="email" name="email" value="<?=$supplier->email?>" class="form-control mb-1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required data-validation-required-message="Email is required">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-12">
                                                 <div class="form-group">
-                                                    <h5>Role <span class="required">*</span></h5>
+                                                    <h5>Phone <span class="required">*</span></h5>
                                                     <div class="controls">
-                                                        <select class="form-group" name="group_id">
-                                                            <?php
-                                                            foreach ($roles as $value) { ?>
-                                                                <option value="<?=$value->role?>"><?=$value->role?></option>
-                                                            <?php } ?>
-
-                                                        </select>
+                                                        <input type="text" name="phone" value="<?=$supplier->phone?>" class="form-control mb-1" minlength="10" maxlength="20">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-12">
                                                 <div class="form-group">
-                                                    <h5>Password <span class="required">*</span></h5>
-                                                    <div class="controls">
-                                                        <input type="password" name="password" class="form-control mb-1" minlength="5" maxlength="15" required data-validation-required-message="Password is required">
-                                                    </div>
+                                                    
                                                 </div>
                                                 <div class="text-right">
                                                     <button type="submit" name="btn_save" class="btn btn-success">Update</button>
-                                                    <a href="?controller=account&action=managerUsers" class="btn btn-danger">Cancel</a>
+                                                    <a href="?controller=supplier&action=managerSupplier" class="btn btn-danger">Cancel</a>
                                                 </div>
                                             </div>
                                         </div>

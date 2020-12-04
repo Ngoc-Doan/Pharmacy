@@ -1,22 +1,21 @@
 <!-- BEGIN: Content-->
 <div class="app-content content">
     <div class="content-wrapper">
-                <div class="content-header row mb-1">
-                    <div class="content-header-left col-md-6 col-12 mb-2">
-                        <h3 class="content-header-title">Salary</h3>
-                        <div class="row breadcrumbs-top">
-                            <div class="breadcrumb-wrapper col-12">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Salary
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
+        <div class="content-header row mb-1">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+                <h3 class="content-header-title">Suppliers</h3>
+                <div class="row breadcrumbs-top">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Suppliers
+                            </li>
+                        </ol>
                     </div>
                 </div>
-
+            </div>
+        </div>
         <div class="content-body">
             <!-- DOM - jQuery events table -->
             <section id="dom">
@@ -24,6 +23,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
+                                <h4 class="card-title"><a href="?controller=supplier&action=addSupplier" class="btn btn-primary "><i class="la la-plus"></i> Add New</a>&nbsp;
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -38,26 +38,26 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Employee</th>
-                                                <th>Start Day</th>
-                                                <th>End Day</th>
-                                                <th>Amount</th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
                                                 <th>Control</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            foreach ($salary as $value) {
-                                                $name = Account::getUserByID($value->emp_id);
+                                            foreach ($supplier as $value) {
                                                 ?>
                                                 <tr>
                                                     <td><?=$value->id?></td>
-                                                    <td><?=$name->name?></td>
-                                                    <td><?=date('d-m-Y', strtotime($value->begin))?></td>
-                                                    <td><?=date('d-m-Y', strtotime($value->end))?></td>
-                                                    <td><?=$value->amount?></td>
+                                                    <td><?=$value->name?></td>
+                                                    <td><?=$value->address?></td>
+                                                    <td><?=$value->email?></td>
+                                                    <td><?=$value->phone?></td>
                                                     <td>
-                                                        <a href="#" <button type="button" class="btn btn-icon btn-danger mr-1 mb-1 cancel-button" id=><i class="la la-trash"></i></button>
+                                                        <a title="Edit" href="?controller=supplier&action=editSupplier&id=<?= $value->id ?>" class="btn btn-icon btn-primary mr-1 mb-1"><i class="la la-edit"></i></a>
+                                                        <a title="Delete" href="?controller=supplier&action=deleteSupplier&id=<?= $value->id ?>" class="btn btn-icon btn-danger mr-1 mb-1"><i class="la la-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php } ?>
@@ -72,8 +72,6 @@
             </section>
             <!-- DOM - jQuery events table -->
         </div>
-       
-
     </div>
-    <!-- END: Content-->
-
+</div>
+<!-- END: Content-->
