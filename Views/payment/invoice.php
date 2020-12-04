@@ -19,10 +19,11 @@
         <div class="content-body">
             <!-- DOM - jQuery events table -->
             <section id="dom">
-                <div class="row">
+            <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
+                            <h4 class="card-title"><a href="?controller=payment&action=addInvoice" class="btn btn-primary "><i class="la la-plus"></i> Add New</a>&nbsp;
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -30,6 +31,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            
                             <div class="card-content collapse show">
                                 <div class="card-body card-dashboard dataTables_wrapper dt-bootstrap">
                                     <div class="table-responsive">
@@ -38,7 +40,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Date</th>
-                                                <th>Customer ID</th>
+                                                <th>Customer</th>
                                                 <th>Total</th>
                                             </tr>
                                             </thead>
@@ -47,10 +49,10 @@
                                             foreach ($invoice as $value) {
                                                 ?>
                                                 <tr>
-                                                    <td><a href="?controller=payment&action=invoiceDetail&id=<?= $value->id ?>"><?=$value->id?></a></td>
-                                                    <td><?=$value->date?></td>
-                                                    <td><?=$value->customer_id?></td>
-                                                    <td><?=number_format($value->total)?> VND</td>
+                                                    <td><a href="?controller=payment&action=invoiceDetail&id=<?= $value[0]->id ?>"><?=$value[0]->id?></a></td>
+                                                    <td><?=$value[0]->date?></td>
+                                                    <td><?=$value[1]?></td>
+                                                    <td><?=number_format($value[0]->total)?> VND</td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

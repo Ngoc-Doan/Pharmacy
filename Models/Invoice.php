@@ -31,6 +31,13 @@
             return $arr;
         }
 
+        public static function addInvoice($date, $customer_id, $total) {
+            $sql = "INSERT INTO invoice(date, customer_id, total) VALUES (:date, :customer_id, :total)";
+            $db = DB::getDB();
+            $stm = $db->prepare($sql);
+            $stm->execute(array('date' => $date, 'customer_id' => $customer_id, 'total' => $total));
+        }
+
         public static function count() {
             $sql = "SELECT COUNT(*) AS 'sum' FROM invoice";
             $db = DB::getDB();

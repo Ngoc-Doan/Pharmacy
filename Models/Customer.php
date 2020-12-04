@@ -31,6 +31,16 @@
             return $arr;
         }
 
+        public static function getCustomerByID($id) {
+            $sql = "SELECT * FROM customers WHERE id = :id";
+            $db = DB::getDB();
+            $stm = $db->prepare($sql);
+            $stm->execute(array('id' => $id));
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+            return new Customer($result['id'], $result['name'], $result['phoneNumber'],
+                    $result['address']);
+        }
+
         public static function count() {
             $sql = "SELECT COUNT(*) AS 'sum' FROM customers";
             $db = DB::getDB();

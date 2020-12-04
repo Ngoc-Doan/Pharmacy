@@ -19,10 +19,11 @@
         <div class="content-body">
             <!-- DOM - jQuery events table -->
             <section id="dom">
-                <div class="row">
+            <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
+                            <h4 class="card-title"><button onclick="window.print()" class="btn btn-primary "><i class="la la-print"></i> Print Invoice</a>&nbsp;
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
