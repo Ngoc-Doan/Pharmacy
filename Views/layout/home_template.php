@@ -18,8 +18,7 @@
         <div class="agile_info">
             <div class="w3l_form">
                 <div class="left_grid_info">
-                    <h1>Manage Your Pharmacy Account</h1>
-                    <img src="assets/logo.jpg" alt="" />
+                    <img src="assets/logo_1.jpg" alt="" />
                 </div>
             </div>
             <div class="w3_info">
