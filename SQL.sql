@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 05, 2020 lúc 04:25 AM
+-- Thời gian đã tạo: Th12 05, 2020 lúc 11:01 AM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 8.0.0
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `pharmacy2`
 --
-CREATE DATABASE IF NOT EXISTS `pharmacy2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pharmacy2`;
 
 -- --------------------------------------------------------
 
@@ -62,9 +60,10 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`id`, `date`, `customer_id`, `total`) VALUES
-(1, '2020-02-22', 1, 150000),
-(2, '2020-06-17', 1, 200000),
-(3, '15-04-2020', 1, 2500000);
+(1, '2020-07-22', 1, 150000),
+(2, '2020-07-05', 1, 200000),
+(3, '2020-04-15', 1, 2500000),
+(4, '2020-05-04', 2, 2700000);
 
 -- --------------------------------------------------------
 
@@ -86,7 +85,11 @@ CREATE TABLE `invoice_detail` (
 
 INSERT INTO `invoice_detail` (`id`, `medicine`, `amount`, `cost`, `customer_id`) VALUES
 (1, '1', 20, 1500, 1),
-(2, '2', 10, 2000, 1);
+(2, '2', 10, 2000, 1),
+(3, '4', 6, 5000, 2),
+(4, '5', 5, 6000, 2),
+(5, '6', 8000, 5, 3),
+(6, '7', 8, 9000, 4);
 
 -- --------------------------------------------------------
 
@@ -309,13 +312,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT cho bảng `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `invoice_detail`
 --
 ALTER TABLE `invoice_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `medicine`
@@ -351,7 +354,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
