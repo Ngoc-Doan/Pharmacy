@@ -49,13 +49,13 @@
                                             foreach ($users as $value) {
                                                 ?>
                                                 <tr>
-                                                    <td><?=$value->id?></td>
-                                                    <td><?=$value->name?></td>
-                                                    <td><?=$value->email?></td>
-                                                    <td><?=$value->role?></td>
+                                                    <td><?=$value[0]->id?></td>
+                                                    <td><?=$value[0]->name?></td>
+                                                    <td><?=$value[0]->email?></td>
+                                                    <td><?=$value[1]?></td>
                                                     <td>
-                                                        <a title="Edit" href="?controller=account&action=editUser&id=<?= $value->id ?>" class="btn btn-icon btn-primary mr-1 mb-1"><i class="la la-edit"></i></a>
-                                                        <a title="Delete" href="?controller=account&action=deleteUser&id=<?= $value->id ?>" class="btn btn-icon btn-danger mr-1 mb-1"><i class="la la-trash"></i></a>
+                                                        <a title="Edit" href="?controller=account&action=editUser&id=<?= $value[0]->id ?>" class="btn btn-icon btn-primary mr-1 mb-1"><i class="la la-edit"></i></a>
+                                                        <a title="Delete" href="?controller=account&action=deleteUser&id=<?= $value[0]->id ?>" class="btn btn-icon btn-danger mr-1 mb-1"><i class="la la-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php } ?>

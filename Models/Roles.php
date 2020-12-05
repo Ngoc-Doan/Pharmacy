@@ -14,6 +14,15 @@
             $this->role = $role;
         }
 
+        public static function getRoleByID($id) {
+            $sql = "SELECT * FROM roles WHERE id = :id";
+            $db = DB::getDB();
+            $stm = $db->prepare($sql);
+            $stm->execute(array('id' => $id));
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+            return new Roles($result['id'], $result['role']);
+        }
+
         public static function getAllRoles() {
             $sql = "SELECT * FROM roles";
             $db = DB::getDB();

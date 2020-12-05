@@ -43,7 +43,14 @@
         function managerUsers() {
             if (isLogin() && getRole() == 1) {
                 $users = Account::getAllUser(getUserInfo()->id);
-                $this->render('managerUsers', array('users' => $users), 'main_template');
+                $role_id = array_column($users,'role');
+                foreach ($role_id as $id){
+                    $role[] = Roles::getRoleByID($id);
+                }
+                $role_name= array_column($role, 'role');
+                $user_role = array_map(null,$users,$role_name);
+ 
+                $this->render('managerUsers', array('users' => $user_role), 'main_template');
             } else {
                 redirect("?controller=home");
             }
@@ -65,7 +72,7 @@
                 if (isset($_POST['btn_save'])) {
                     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
                     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-                    $role = filter_input(INPUT_POST, 'group_id', FILTER_SANITIZE_STRING);
+                    $role = filter_input(INPUT_POST, 'group_id', FILTER_SANITIZE_NUMBER_INT);
                     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
                     $pwd = password_hash($password, PASSWORD_DEFAULT);
                     Account::addUser($name, $pwd, $email, $role);
@@ -112,7 +119,7 @@
                     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
                     $uName = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
                     $uEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-                    $uRole = filter_input(INPUT_POST, 'group_id', FILTER_SANITIZE_STRING);
+                    $uRole = filter_input(INPUT_POST, 'group_id', FILTER_SANITIZE_NUMBER_INT);
                     $uPass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
                     $pwd = password_hash($uPass, PASSWORD_DEFAULT);
                     Account::editUser($id, $uName, $uEmail, $uRole, $pwd);
@@ -122,6 +129,7 @@
                     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
                     $user = Account::getUserByID($id);
                     $roles = Roles::getAllRoles();
+                   
                     $this->render('editUser', array('user' => $user, 'roles' => $roles));
                 }
             } else {

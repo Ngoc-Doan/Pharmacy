@@ -57,7 +57,7 @@
                                                         <select class="form-group" name="group_id">
                                                             <?php
                                                             foreach ($roles as $value) { ?>
-                                                                <option value="<?=$value->role?>"><?=$value->role?></option>
+                                                                <option value="<?=$value->id?>"><?=$value->role?></option>
                                                             <?php } ?>
 
                                                         </select>
@@ -73,7 +73,7 @@
                                                 </div>
                                                 <div class="text-right">
                                                     <button type="submit" name="btn_save" class="btn btn-success">Add</button>
-                                                    <a href="users" class="btn btn-danger">Cancel</a>
+                                                    <a href="?controller=account&action=managerUsers" class="btn btn-danger">Cancel</a>
                                                 </div>
                                             </div>
                                         </div>

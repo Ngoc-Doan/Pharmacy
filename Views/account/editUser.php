@@ -3,13 +3,13 @@
     <div class="content-wrapper">
         <div class="content-header row mb-1">
             <div class="content-header-left col-md-6 col-12 mb-2">
-                <h3 class="content-header-title">Edit User</h3>
+                <h3 class="content-header-title">Add User</h3>
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index">Home</a>
                             </li>
-                            <li class="breadcrumb-item active">Edit User
+                            <li class="breadcrumb-item active">Add User
                             </li>
                         </ol>
                     </div>
@@ -65,7 +65,7 @@
                                                         <select class="form-group" name="group_id">
                                                             <?php
                                                             foreach ($roles as $value) { ?>
-                                                                <option value="<?=$value->role?>"><?=$value->role?></option>
+                                                                <option value="<?=$value->id?>"><?=$value->role?></option>
                                                             <?php } ?>
 
                                                         </select>
