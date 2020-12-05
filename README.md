@@ -18,19 +18,19 @@ Bước 5: Truy cập domain http://localhost/Pharmacy/ để chạy chương tr
 Bước 6: Đăng nhập vào tài khoản Admin (để truy cập hoặc tạo tài khoản người dùng)
 
 Phía Admin: 
-email: mhung@gmail.com
+email: admin@gmail.com
 password: 123
 
 Phía User:
    Manager:
      email: manager@gmail.com
-     password: 12345
+     password: 123456
 
    Salesman:
      email: staff@gmail.com
-     password: 12345
+     password: 123456
 
    Warehouse staff:
      email: staff@gmail.com
-     password: 12345
+     password: 123456
 
