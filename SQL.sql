@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 01:10 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 05, 2020 lúc 04:25 AM
+-- Phiên bản máy phục vụ: 10.4.17-MariaDB
+-- Phiên bản PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pharmacy2`
+-- Cơ sở dữ liệu: `pharmacy2`
 --
+CREATE DATABASE IF NOT EXISTS `pharmacy2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `pharmacy2`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Cấu trúc bảng cho bảng `customers`
 --
 
 CREATE TABLE `customers` (
@@ -36,7 +37,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `customers`
+-- Đang đổ dữ liệu cho bảng `customers`
 --
 
 INSERT INTO `customers` (`id`, `name`, `phoneNumber`, `address`) VALUES
@@ -46,7 +47,7 @@ INSERT INTO `customers` (`id`, `name`, `phoneNumber`, `address`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoice`
+-- Cấu trúc bảng cho bảng `invoice`
 --
 
 CREATE TABLE `invoice` (
@@ -57,17 +58,18 @@ CREATE TABLE `invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `invoice`
+-- Đang đổ dữ liệu cho bảng `invoice`
 --
 
 INSERT INTO `invoice` (`id`, `date`, `customer_id`, `total`) VALUES
 (1, '2020-02-22', 1, 150000),
-(2, '2020-06-17', 1, 200000);
+(2, '2020-06-17', 1, 200000),
+(3, '15-04-2020', 1, 2500000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoice_detail`
+-- Cấu trúc bảng cho bảng `invoice_detail`
 --
 
 CREATE TABLE `invoice_detail` (
@@ -79,7 +81,7 @@ CREATE TABLE `invoice_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `invoice_detail`
+-- Đang đổ dữ liệu cho bảng `invoice_detail`
 --
 
 INSERT INTO `invoice_detail` (`id`, `medicine`, `amount`, `cost`, `customer_id`) VALUES
@@ -89,7 +91,7 @@ INSERT INTO `invoice_detail` (`id`, `medicine`, `amount`, `cost`, `customer_id`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medicine`
+-- Cấu trúc bảng cho bảng `medicine`
 --
 
 CREATE TABLE `medicine` (
@@ -102,7 +104,7 @@ CREATE TABLE `medicine` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `medicine`
+-- Đang đổ dữ liệu cho bảng `medicine`
 --
 
 INSERT INTO `medicine` (`id`, `name`, `company`, `qty`, `expire`, `price`) VALUES
@@ -118,7 +120,7 @@ INSERT INTO `medicine` (`id`, `name`, `company`, `qty`, `expire`, `price`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Cấu trúc bảng cho bảng `roles`
 --
 
 CREATE TABLE `roles` (
@@ -127,7 +129,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Đang đổ dữ liệu cho bảng `roles`
 --
 
 INSERT INTO `roles` (`id`, `role`) VALUES
@@ -138,7 +140,7 @@ INSERT INTO `roles` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `salary`
+-- Cấu trúc bảng cho bảng `salary`
 --
 
 CREATE TABLE `salary` (
@@ -150,16 +152,19 @@ CREATE TABLE `salary` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `salary`
+-- Đang đổ dữ liệu cho bảng `salary`
 --
 
 INSERT INTO `salary` (`id`, `emp_id`, `begin`, `end`, `amount`) VALUES
-(1, 1, '2020-09-01', '2020-09-01', 2000000);
+(1, 1, '2020-09-01', '2020-09-01', 2000000),
+(3, 16, '12-05-2020', '12-05-2020', 5000000),
+(4, 17, '12-05-2020', '12-05-2020', 4500000),
+(5, 18, '12-05-2020', '12-05-2020', 4000000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sale_statistics`
+-- Cấu trúc bảng cho bảng `sale_statistics`
 --
 
 CREATE TABLE `sale_statistics` (
@@ -169,7 +174,7 @@ CREATE TABLE `sale_statistics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `sale_statistics`
+-- Đang đổ dữ liệu cho bảng `sale_statistics`
 --
 
 INSERT INTO `sale_statistics` (`id`, `month`, `total`) VALUES
@@ -189,7 +194,29 @@ INSERT INTO `sale_statistics` (`id`, `month`, `total`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `supplier`
+--
+
+INSERT INTO `supplier` (`id`, `name`, `address`, `email`, `phone`) VALUES
+(2, 'Cty ABC', '23 Pastel', 'abc@gmail.com', '11511156546'),
+(3, 'Cty Dược ASD', '45/4 Trần Đình Xu', 'kxq07813@bcaoo.com', '515515165151');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -201,136 +228,132 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `role`) VALUES
-(1, 'Hung', '$2y$10$ypqQBxk19sJgLAbhpJtsJehAUYcW.k0ORQw28t5GLV3HKV0hSw3d6', 'mhung@gmail.com', 1);
+(1, 'admin', '$2y$10$ypqQBxk19sJgLAbhpJtsJehAUYcW.k0ORQw28t5GLV3HKV0hSw3d6', 'admin@gmail.com', 1),
+(16, 'staff', '$2y$10$a0PL.dZgLjO4Xa24gKSjVuKnjSLXCJuh0XKykQ5jU8Gc5AIPmEn3q', 'staff@gmail.com', 3),
+(17, 'manager', '$2y$10$hIJ5YVhYEIWM6jCdxyKi1eEKYJlKuVA7kn5qQ1bU/Yugj5RN/eXSy', 'manager@gmail.com', 1),
+(18, 'saleman', '$2y$10$NAd2KY9XAzj2eeNfNZjJw.7lbSRx0SWl.9iZX3pQAG02Al0.Q81w2', 'saleman@gmail.com', 2);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `customers`
+-- Chỉ mục cho bảng `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `invoice`
+-- Chỉ mục cho bảng `invoice`
 --
 ALTER TABLE `invoice`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `invoice_detail`
+-- Chỉ mục cho bảng `invoice_detail`
 --
 ALTER TABLE `invoice_detail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `medicine`
+-- Chỉ mục cho bảng `medicine`
 --
 ALTER TABLE `medicine`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `roles`
+-- Chỉ mục cho bảng `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `salary`
+-- Chỉ mục cho bảng `salary`
 --
 ALTER TABLE `salary`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sale_statistics`
+-- Chỉ mục cho bảng `sale_statistics`
 --
 ALTER TABLE `sale_statistics`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `supplier`
+--
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `invoice`
+-- AUTO_INCREMENT cho bảng `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `invoice_detail`
+-- AUTO_INCREMENT cho bảng `invoice_detail`
 --
 ALTER TABLE `invoice_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `medicine`
+-- AUTO_INCREMENT cho bảng `medicine`
 --
 ALTER TABLE `medicine`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `salary`
+-- AUTO_INCREMENT cho bảng `salary`
 --
 ALTER TABLE `salary`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `sale_statistics`
+-- AUTO_INCREMENT cho bảng `sale_statistics`
 --
 ALTER TABLE `sale_statistics`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `supplier`
+--
+ALTER TABLE `supplier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
-CREATE TABLE `supplier` (
-  `id` int(11) NOT NULL,
-  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
-INSERT INTO `supplier` (`name`, `address`, `email`, `phone`) VALUES
-('Pharmacity', '27 Tran Hung Dao', 'pn@gmail.com', '06803231234');
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
