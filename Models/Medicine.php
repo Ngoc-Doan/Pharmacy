@@ -103,4 +103,14 @@
             $result = $stm->fetch(PDO::FETCH_ASSOC);
             return $result['sum'];
         }
+
+        public static function getPriceByName($name) {
+            $sql = "SELECT price FROM Medicine WHERE name = :name";
+            $db = DB::getDB();
+            $stm = $db->prepare($sql);
+            $stm->execute(array('name' => $name));
+            $item = $stm->fetch(PDO::FETCH_ASSOC);
+
+            return $item['price'];
+        }
     }

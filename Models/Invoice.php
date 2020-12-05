@@ -31,6 +31,17 @@
             return $arr;
         }
 
+        public static function getByID($id) {
+            $sql = "SELECT * FROM invoice WHERE id = :id";
+            $db = DB::getDB();
+            $stm = $db->prepare($sql);
+            $stm->execute(array('id' => $id));
+            $item = $stm->fetch(PDO::FETCH_ASSOC);
+
+            return new Invoice($item['id'], $item['date'], $item['customer_id'], $item['total']);
+
+        }
+        
         public static function addInvoice($date, $customer_id, $total) {
             $sql = "INSERT INTO invoice(date, customer_id, total) VALUES (:date, :customer_id, :total)";
             $db = DB::getDB();

@@ -69,8 +69,6 @@
             $stm->execute(array('id' => $id));
         }
 
-        
-
         public static function count() {
             $sql = "SELECT COUNT(*) AS 'sum' FROM supplier";
             $db = DB::getDB();
