@@ -17,20 +17,23 @@ Bước 5: Truy cập domain http://localhost/Pharmacy/ để chạy chương tr
 
 Bước 6: Đăng nhập vào tài khoản Admin (để truy cập hoặc tạo tài khoản người dùng)
 
-Phía Admin: 
-email: admin@gmail.com
-password: 123
-
-Phía User:
+Phía Quản lý: 
    Manager:
      email: manager@gmail.com
      password: 123456
+- Xem danh sách thuốc, hóa đơn, chi tiết hóa đơn, khách hàng, lương nhân viên.
+- Quản lý người dùng: thêm, xóa, sửa.
+- Thống kê doanh thu
 
+Phía User:
    Salesman:
      email: staff@gmail.com
      password: 123456
+- Xem danh sách thuốc
+- Quản lý hóa đơn: xem chi tiết hóa đơn, thêm, xóa, sửa, in.
 
    Warehouse staff:
      email: staff@gmail.com
      password: 123456
-
+- Quản lý nhà cung cấp: thêm, xóa, sửa.
+- Quản lý thuốc: thêm, xóa, sửa, kiểm tra số lượng, kiểm tra ngày hết hạn.

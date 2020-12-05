@@ -7,7 +7,7 @@
         }
 
         function customer() {
-            if (getRole() == 2) {
+            if (getRole() == 2 || getRole() == 1) {
                 $customers = Customer::getAll();
                 $this->render('customer', array('customer' => $customers));
             } else {
