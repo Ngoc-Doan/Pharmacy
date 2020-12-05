@@ -22,18 +22,18 @@ Phía Quản lý:
      email: manager@gmail.com
      password: 123456
 - Xem danh sách thuốc, hóa đơn, chi tiết hóa đơn, khách hàng, lương nhân viên.
-- Quản lý người dùng: thêm, xóa, sửa.
+- Quản lý người dùng: tìm kiếm, thêm, xóa, sửa.
 - Thống kê doanh thu
 
 Phía User:
    Salesman:
      email: staff@gmail.com
      password: 123456
-- Xem danh sách thuốc
-- Quản lý hóa đơn: xem chi tiết hóa đơn, thêm, xóa, sửa, in.
+- Xem danh sách thuốc, khách hàng
+- Quản lý hóa đơn: tìm kiếm, xem chi tiết hóa đơn, thêm, xóa, sửa, in.
 
    Warehouse staff:
      email: staff@gmail.com
      password: 123456
-- Quản lý nhà cung cấp: thêm, xóa, sửa.
-- Quản lý thuốc: thêm, xóa, sửa, kiểm tra số lượng, kiểm tra ngày hết hạn.
+- Quản lý nhà cung cấp: tìm kiếm, thêm, xóa, sửa.
+- Quản lý thuốc: tìm kiếm, xem, thêm, xóa, sửa, kiểm tra số lượng, kiểm tra ngày hết hạn.
