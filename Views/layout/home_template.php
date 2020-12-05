@@ -18,7 +18,7 @@
         <div class="agile_info">
             <div class="w3l_form">
                 <div class="left_grid_info">
-                    <img src="assets/logo_1.jpg" alt="" />
+                    <img src="assets/images/logo_homepage.jpg" alt="" />
                 </div>
             </div>
             <div class="w3_info">

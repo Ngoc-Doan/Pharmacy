@@ -7,7 +7,7 @@
         }
 
         function managerSupplier() {
-            if (isLogin() && getRole() == 1) {
+            if (isLogin() && getRole() == 3) {
                 
                 $supplier = Supplier::getSupplier();
                 $this->render('managerSupplier', array('supplier' => $supplier), 'main_template');
@@ -18,7 +18,7 @@
         }
 
         function addSupplier() {
-            if (isLogin() && getRole() == 1) {
+            if (isLogin() && getRole() == 3) {
                 if (isset($_POST['btn_save'])) {
                     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
                     $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
@@ -38,7 +38,7 @@
      
 
         function editSupplier() {
-            if (isLogin() && getRole() == 1) {
+            if (isLogin() && getRole() == 3) {
                 if (isset($_POST['btn_save'])) {
                     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
                     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
@@ -59,7 +59,7 @@
         }
 
         function deleteSupplier() {
-            if (isLogin() && getRole() == 1) {
+            if (isLogin() && getRole() == 3) {
                 if (isset($_GET['id'])) {
                     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
                     Supplier::deleteSupplier($id);

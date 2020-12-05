@@ -123,7 +123,6 @@
             }
         }
 
-
         chart1();
         chart2();
         chart3();
